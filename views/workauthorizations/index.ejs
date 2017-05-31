@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+    <meta charset="utf-8">
+    <title>SOL</title>
+  </head>
+  <body>
+
+ <% include ../../templates/header.ejs %>
+
+      <div id="maincontent">
+        <h1 id="subtitle">Work Authorization</h1>
+
+        <a id="submenu" href="/sol/workauthorizations/newworkauthorization">ADD WORK AUTHORIZATION</a><br/>
+
+        <ul>
+            <% for(var i = 0; i < workauthorizations.length; i++){ %>
+                <li>
+              <a href="/sol/workauthorizations/<%=workauthorizations[i]._id%>"><%=workauthorizations[i].title; %></a><br/>
+                </li>
+            <% } %>
+        </ul>
+
+      </div>
+      <% include ../../templates/footer.ejs %>
+  </body>
+</html>

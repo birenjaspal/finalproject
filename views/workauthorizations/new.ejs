@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+    <meta charset="utf-8">
+    <title>SOL</title>
+  </head>
+  <body>
+
+     <% include ../../templates/header.ejs %>
+
+     <div id="maincontent">
+       <h1 id="subtitle"> Add a Work Authorization </h1><br/>
+    <form id="subtitle" action="/sol/workauthorizations" method="POST">
+           title: <input type="text" name="title" /><br/>
+           chargecode: <input type="text" name="chargecode" /><br/>
+           allocationanme: <input type="text" name="allocationname" /><br/>
+           allocationhours: <input type="Number" name="allocationhours" /><br/>
+    <br/><br>
+
+           <input id="submenu" type="submit" name="" value="Create Workauthorization"/>
+    </form>
+</div>
+<% include ../../templates/footer.ejs %>
+
+</body>
+</html>

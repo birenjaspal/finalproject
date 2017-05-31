@@ -1,0 +1,263 @@
+
+body {
+    background-color: #64484C;
+    /*#2E1114 #501B1D #64484C #83677B #ADADAD*/
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: -20% -20%;
+}
+
+a{
+  color: lightgrey;
+}
+
+.form-item {
+  padding: 10px 0 10px 200px;
+  position: relative;
+  color: lightgrey;
+}
+.form-item label {
+    color: lightgrey;
+  left: 0;
+  position: absolute;
+}
+
+#appview {
+  width:400px;
+  word-break:break-all;
+}
+
+.thintopbar {
+  padding-bottom: 9px;
+  background: #501B1D;
+
+}
+
+.topbar {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  background: #ADADAD;
+  color: lightgrey;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 9px;
+  padding-left: 80px;
+}
+
+#nav {
+  color: lightgrey;
+}
+
+#subtitle {
+  color: lightgrey;
+  position: relative;
+  left: 40px;
+}
+
+#submenu {
+  color: black;
+  position: relative;
+  left: 40px;
+}
+
+.topbar-left {
+  display: inline-block;
+}
+
+.topbar-right {
+  display: inline-block;
+}
+
+.bottombar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0rem;
+  background-color: #2E1114;
+  /*rgb(22,22,22);*/
+  text-align: center;
+  color: lightgrey;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+* {  box-sizing: border-box; }
+
+.thumbnails {
+    display: block;
+    border-radius: 8px;
+    position: absolute;
+    left: 400px;
+    top: 150px;
+    height: 300px;
+}
+
+li {
+  color: lightgrey;
+}
+
+/*.app {
+    height: 100vh;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 2vh;
+}*/
+
+/*.header {
+    max-height: 600px * 2 / 3;
+    height: 66.6vw;
+    border: 5px solid black;
+    position: relative;
+}*/
+
+/*.header-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*display: flex;
+    justify-content: space-between;
+    flex-direction: column;*/
+}*/
+
+#maincontent {
+  position: absolute;
+  left: 7%;
+  top: 20%;
+  width: 30%;
+  height: 50%;
+  overflow: scroll;
+  background: #486faf;
+  color: blue;
+  opacity: .8;
+  padding: 5px 5px 5px 20px;
+  border-radius: 25px;
+}
+
+.nav-tabs{
+  background-color:#161616;
+}
+.tab-content{
+    background-color:#303136;
+    color:#fff;
+    padding:5px
+}
+.nav-tabs > li > a{
+  border: medium none;
+}
+.nav-tabs > li > a:hover{
+  background-color: #999999 !important;
+    border: medium none;
+    border-radius: 0;
+    color:#fff;
+}
+
+.blink_text {
+    display: inline;
+    animation:1s blinker linear infinite;
+    -webkit-animation:1s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
+
+     color: red;
+    }
+
+    @-moz-keyframes blinker {
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+
+    @-webkit-keyframes blinker {
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+
+    @keyframes blinker {
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+
+/*.bottombar {
+    height: 20vh;
+    background: salmon;
+    opacity: .2;
+}*/
+
+.landing-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%; }
+  .landing-info .one, .landing-info .two, .landing-info .three {
+    text-align: center;
+    width: 33.3%;
+    height: 190px;
+    padding: 2%;
+    box-sizing: border-box; }
+  .landing-info .one, .landing-info .two {
+    border-right: 1px dotted #64484C; }
+  .landing-info img {
+    width: 50px;
+    height: 50px; }
+  .landing-info p {
+    margin: 2%; }
+
+
+    .wallpaper {
+      width: 100%;
+      height: 400px;
+      background: #64484C;
+      background-image: url('../images/pmwallpapertint.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+
+.wallpapertextbox {
+  width: 90%;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0 auto;
+  top: 50px;
+  position: relative;
+}
+.wallpapertitle {
+  width: 100%;
+  top: 60px;
+  position: relative;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 800;
+  text-shadow: 2px 2px $blue;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+.wallpapertitle:after {
+  content: "";
+  background: $blue;
+  width: 30%;
+  height: 1px;
+  left: 35%;
+  margin-top: 5px;
+  position: relative;
+  display: block;
+}
+.wallpaperdesc {
+  width: 100%;
+  font-size: 15px;
+  color: #83677B;
+  text-transform: uppercase;
+    text-align: center;
+  font-style: italic;
+}

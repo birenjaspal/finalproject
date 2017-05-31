@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+    <meta charset="utf-8">
+    <title>SOL</title>
+  </head>
+  <body>
+  <% include ../../templates/header.ejs %>
+
+  <div id="maincontent">
+    <h1 id="subtitle">Work Authorization Details</h1>
+
+        <a id="submenu" href="/sol/workauthorizations/<%=workauthorization._id%>/edit">EDIT</a>
+
+        <ul>
+          <li> title: <%=workauthorization.title%></li>
+          <li> chargecode: <%=workauthorization.chargecode%></li>
+          <li> allocationname: <%=workauthorization.allocationname%></li>
+          <li> allocationhours: <%=workauthorization.allocationhours%></li>
+        </ul>
+
+
+        <form action="/sol/workauthorizaions/deleteworkauthorization/<%=workauthorization._id%>?_method=DELETE" method="POST">
+          <input id="submenu" type="submit" value="DELETE"/>
+        </form>
+
+      </div>
+      <% include ../../templates/footer.ejs %>
+
+  </body>
+</html>

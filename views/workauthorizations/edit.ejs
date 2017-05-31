@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+    <meta charset="utf-8">
+    <title>SOL</title>
+  </head>
+  <body>
+
+         <% include ../../templates/header.ejs %>
+
+         <div id="maincontent">
+           <h1 id="subtitle"> Edit Work Authorization  </h1>
+    <form id="subtitle" action="/sol/workauthorization/<%=workauthorization.id%>?_method=PUT" method="Post">
+      title: <input type="text" name="title" value="<%=workauthorization.title%>"/><br/>
+      chargecode: <input type="text" name="chargecode" value="<%=workauthorization.chargecode%>"/><br/>
+      allocationname: <input type="text" name="allocationname" value="<%=workauthorization.allocationname%>"/><br/>
+      allocationhours: <input type="Number" name="allocationhours" value="<%=workauthorization.allocationhours%>"/><br/>
+      <input id="submenu" type="submit" name="" value="Submit Changes" />
+    </form>
+
+  </div>
+  <% include ../../templates/footer.ejs %>
+
+</body>
+</html>
