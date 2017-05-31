@@ -12,10 +12,43 @@
      <div id="maincontent">
        <h1 id="subtitle"> Add a Work Authorization </h1><br/>
     <form id="subtitle" action="/sol/workauthorizations" method="POST">
-           title: <input type="text" name="title" /><br/>
-           chargecode: <input type="text" name="chargecode" /><br/>
-           allocationanme: <input type="text" name="allocationname" /><br/>
-           allocationhours: <input type="Number" name="allocationhours" /><br/>
+      <table>
+        <tr>
+          <td align="right">
+           title:
+         </td>
+         <td>
+            <input type="text" name="title" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+           chargecode:
+         </td>
+         <td>
+           <input type="text" name="chargecode" />
+         </td>
+       </tr>
+       <tr>
+         <td align="right">
+           allocation name:
+         </td>
+         <td>
+           <input type="text" name="allocationname" />
+         </td>
+       </tr>
+       <tr>
+         <td align="right">
+           allocation hours:
+         </td>
+         <td>
+           <input type="Number" name="allocationhours" />
+         </td>
+         </table>
+         <!-- title: <input type="text" name="title" /><br/>
+         chargecode: <input type="text" name="chargecode" /><br/>
+         allocationanme: <input type="text" name="allocationname" /><br/>
+         allocationhours: <input type="Number" name="allocationhours" /><br/> -->
     <br/><br>
 
            <input id="submenu" type="submit" name="" value="Create Workauthorization"/>

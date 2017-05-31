@@ -121,7 +121,18 @@ router.post('/', function(req, res){
 //     res.render('sessions/tryagain.ejs');
 //   }
 // });
-
+router.get('/dashboard/dashboard', function(req, res){
+  if(req.session.currentuser){
+    Workauthorizations.find({}, function(error, allWorkauthorizations){
+        res.render('dashboard/dashboard.ejs', {
+            // workauthorizations: allWorkauthorizations,
+            currentUser: req.session.currentuser
+        });
+    });
+  } else {
+    res.render('sessions/tryagain.ejs');
+  }
+});
 
 
 module.exports = router;

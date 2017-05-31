@@ -37,7 +37,7 @@ a{
   display: -webkit-flex;
   display: flex;
   justify-content: space-between;
-  background: #ADADAD;
+  background: #2E1114;
   color: lightgrey;
   padding-top: 30px;
   padding-right: 30px;
@@ -240,7 +240,7 @@ li {
   font-size: 100px;
   font-weight: 800;
   text-shadow: 2px 2px $blue;
-  color: whitesmoke;
+  color: #501B1D;
   text-transform: uppercase;
 }
 .wallpapertitle:after {

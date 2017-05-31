@@ -11,13 +11,49 @@
 
          <div id="maincontent">
            <h1 id="subtitle"> Edit Work Authorization  </h1>
-    <form id="subtitle" action="/sol/workauthorization/<%=workauthorization.id%>?_method=PUT" method="Post">
-      title: <input type="text" name="title" value="<%=workauthorization.title%>"/><br/>
-      chargecode: <input type="text" name="chargecode" value="<%=workauthorization.chargecode%>"/><br/>
-      allocationname: <input type="text" name="allocationname" value="<%=workauthorization.allocationname%>"/><br/>
-      allocationhours: <input type="Number" name="allocationhours" value="<%=workauthorization.allocationhours%>"/><br/>
+    <form id="subtitle" action="/sol/workauthorizations/<%=workauthorization.id%>?_method=PUT" method="Post">
+      <table>
+        <tr>
+          <td align="right">
+            title:
+          </td>
+          <td>
+            <input type="text" name="title" value="<%=workauthorization.title%>"/>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            chargecode:
+          </td>
+          <td>
+            <input type="text" name="chargecode" value="<%=workauthorization.chargecode%>"/>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            allocationname:
+          </td>
+          <td>
+            <input type="text" name="allocationname" value="<%=workauthorization.allocationname%>"/>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            allocationhours:
+          </td>
+          <td>
+            <input type="Number" name="allocationhours" value="<%=workauthorization.allocationhours%>"/>
+          </td>
+        </tr>
+      </table>
       <input id="submenu" type="submit" name="" value="Submit Changes" />
     </form>
+
+    <!-- title: <input type="text" name="title" value="<%=workauthorization.title%>"/><br/>
+    chargecode: <input type="text" name="chargecode" value="<%=workauthorization.chargecode%>"/><br/>
+    allocationname: <input type="text" name="allocationname" value="<%=workauthorization.allocationname%>"/><br/>
+    allocationhours: <input type="Number" name="allocationhours" value="<%=workauthorization.allocationhours%>"/><br/>
+    <input id="submenu" type="submit" name="" value="Submit Changes" /> -->
 
   </div>
   <% include ../../templates/footer.ejs %>
