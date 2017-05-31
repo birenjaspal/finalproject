@@ -4,6 +4,8 @@
     <% include ../partials/head %>
     <meta charset="utf-8">
     <title>SOL</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico" />
+
   </head>
   <body>
 
@@ -14,13 +16,13 @@
 
         <a id="submenu" href="/sol/workauthorizations/newworkauthorization">ADD WORK AUTHORIZATION</a><br/>
 
-        <ul>
+        <ol>
             <% for(var i = 0; i < workauthorizations.length; i++){ %>
                 <li>
               <a href="/sol/workauthorizations/<%=workauthorizations[i]._id%>"><%=workauthorizations[i].title; %></a><br/>
                 </li>
             <% } %>
-        </ul>
+        </ol>
 
       </div>
       <% include ../../templates/footer.ejs %>
