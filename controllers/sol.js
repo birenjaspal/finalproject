@@ -125,7 +125,7 @@ router.get('/dashboard/dashboard', function(req, res){
   if(req.session.currentuser){
     Workauthorizations.find({}, function(error, allWorkauthorizations){
         res.render('dashboard/dashboard.ejs', {
-            // workauthorizations: allWorkauthorizations,
+            workauthorizations: allWorkauthorizations,
             currentUser: req.session.currentuser
         });
     });

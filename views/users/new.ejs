@@ -4,6 +4,7 @@
     <% include ../partials/head %>
     <meta charset="utf-8">
     <title>SOL</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico" />
   </head>
   <body>
     <header class="header">
@@ -16,8 +17,49 @@
         <!-- <body background="/css/wificity3.jpg"> -->
       <h1 id="subtitle">Create User</h1>
       <form id="submenu" action="/users" method="POST">
-          <input type="text" name="username" placeholder="username"/>
-          <input type="password" name="password" placeholder="password"/>
+        <table>
+          <tr>
+            <td align="right">
+              username:
+            </td>
+            <td>
+              <input type="text" name="username" placeholder="username"/>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              password:
+            </td>
+            <td>
+              <input type="password" name="password" placeholder="password"/>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              email:
+            </td>
+            <td>
+              <input type="text" name="email" placeholder="email"/>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              image:
+            </td>
+            <td>
+              <input type="text" name="img" placeholder="img"/>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              role:
+            </td>
+            <td>
+              <input type="text" name="role" placeholder="role"/>
+            </td>
+          </tr>
+        </table>
+
           <input type="submit" value="Create User" />
       </form>
       <div class="bottombar">GA WDIR - Final Project</div>
