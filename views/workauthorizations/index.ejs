@@ -12,17 +12,44 @@
  <% include ../../templates/header.ejs %>
 
       <div id="maincontent">
-        <h1 id="subtitle">Work Authorization</h1>
+        <h1 id="subtitle">Team Authorizations</h1>
 
         <a id="submenu" href="/sol/workauthorizations/newworkauthorization">ADD WORK AUTHORIZATION</a><br/>
 
-        <ol>
+        <script type="text/javascript">
+          $(document).ready( function () {
+              $('#example').DataTable({
+                scrollY: 300,
+      paging: false,
+      "autoWidth": true,
+      "searching": true,
+      "ordering": true
+
+              });
+          } );
+  </script>
+
+  <table id="example" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th> title </th>
+      <th> chargecode </th>
+      <th> allocationname </th>
+      <th> allocationhours </th>
+    </tr>
+  </thead>
+  <tbody>
             <% for(var i = 0; i < workauthorizations.length; i++){ %>
-                <li>
-              <a href="/sol/workauthorizations/<%=workauthorizations[i]._id%>"><%=workauthorizations[i].title; %></a><br/>
-                </li>
+                <tr>
+                  <td>
+              <a href="/sol/workauthorizations/<%=workauthorizations[i]._id%>"><%=workauthorizations[i].title; %></a></td>
+              <td><%=workauthorizations[i].chargecode %></td>
+                <td><%=workauthorizations[i].allocationname %></td>
+                  <td><%=workauthorizations[i].allocationhours %></td>
+            </tr>
             <% } %>
-        </ol>
+</tbody>
+</table>
 
       </div>
       <% include ../../templates/footer.ejs %>

@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <title>SOL</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 
   </head>
   <body>
@@ -14,12 +21,27 @@
       <div id="maincontent">
         <h1 id="subtitle">My Authorization(s)</h1>
 
-        <table>
+      <script type="text/javascript">
+        $(document).ready( function () {
+            $('#example').DataTable({
+              scrollY: 300,
+    paging: false,
+    "autoWidth": true,
+    "searching": true,
+    "ordering": true
+
+            });
+        } );
+</script>
+        <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
           <tr>
-            <td> Project      </td>
-            <td> Charge Code      </td>
-            <td> Hours </td>
+            <th> Project      </th>
+            <th> Charge Code      </th>
+            <th> Hours </th>
           </tr>
+        </thead>
+        <tbody>
             <% for(var i = 0; i < workauthorizations.length; i++){ %>
             <%  if (workauthorizations[i].allocationname==currentUser.username) { %>
                 <tr>
@@ -37,7 +59,8 @@
             <% } else { %>
                 <% } %>
               <% } %>
-
+            </tbody>
+          </table>
       </div>
       <% include ../../templates/footer.ejs %>
   </body>
