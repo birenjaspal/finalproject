@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+    <meta charset="utf-8">
+    <title>SOL</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico" />
+
+  </head>
+  <body>
+
+ <% include ../../templates/header.ejs %>
+
+      <div id="maincontent">
+        <h1 id="subtitle">My Authorization(s)</h1>
+
+        <table>
+          <tr>
+            <td> Project      </td>
+            <td> Charge Code      </td>
+            <td> Hours </td>
+          </tr>
+            <% for(var i = 0; i < workauthorizations.length; i++){ %>
+            <%  if (workauthorizations[i].allocationname==currentUser.username) { %>
+                <tr>
+                  <td>
+            <%=workauthorizations[i].title; %>
+          </td>
+          <td>
+            <%=workauthorizations[i].chargecode; %>
+          </td>
+          <td>
+              <%=workauthorizations[i].allocationhours; %>
+            </td>
+          </tr>
+
+            <% } else { %>
+                <% } %>
+              <% } %>
+
+      </div>
+      <% include ../../templates/footer.ejs %>
+  </body>
+</html>

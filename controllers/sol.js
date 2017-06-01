@@ -44,6 +44,19 @@ router.get('/workauthorizations/index', function(req, res){
   }
 });
 
+router.get('/myauthorizations/index', function(req, res){
+  if(req.session.currentuser){
+    Workauthorizations.find({}, function(error, allWorkauthorizations){
+        res.render('myauthorizations/index.ejs', {
+            workauthorizations: allWorkauthorizations,
+            currentUser: req.session.currentuser
+        });
+    });
+  } else {
+    res.render('sessions/tryagain.ejs');
+  }
+});
+
 //delete route for deleting transceiver
 router.delete('/workauthorizations/deleteworkauthorization/:id', function(req, res){
   if(req.session.currentuser){

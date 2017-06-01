@@ -30,9 +30,12 @@
   <% if(currentUser) { %>
     <nav>
       <ul class="nav nav-tabs">
-        <li><a href="/sol/workauthorizations/index">Work Authorization</a></li>
-      </li>
+
+          <% if(currentUser.role =="pm") { %>
+        <li><a href="/sol/workauthorizations/index">Project Authorization</a></li>
         <li><a href="/sol/dashboard/dashboard">Dashboard</a></li>
+            <% } else { %>   <% } %>
+        <li><a href="/sol/myauthorizations/index">My Authorizations</a></li>
       </ul>
     </nav>
     <% } else { %>
