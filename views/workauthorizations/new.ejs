@@ -5,55 +5,71 @@
     <meta charset="utf-8">
     <title>SOL</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <link rel="stylesheet" href="/resources/demos/style.css">
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <script>
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
+</script>
   </head>
   <body>
 
      <% include ../../templates/header.ejs %>
 
      <div id="maincontent">
-       <h1 id="subtitle"> Add a Work Authorization </h1><br/>
+       <h1 id="subtitle"> Add Work Authorization </h1><br/>
     <form id="subtitle" action="/sol/workauthorizations" method="POST">
       <table>
         <tr>
           <td align="right">
-           title:
+           Project:
          </td>
          <td>
-            <input type="text" name="title" />
+            <input type="text" name="title" required />
           </td>
         </tr>
         <tr>
           <td align="right">
-           chargecode:
+           Charge Code:
          </td>
          <td>
-           <input type="text" name="chargecode" />
+           <input type="text" name="chargecode" required />
          </td>
        </tr>
        <tr>
          <td align="right">
-           allocation name:
+           Staff Name:
          </td>
          <td>
-           <input type="text" name="allocationname" />
+           <input type="text" name="allocationname" required />
          </td>
        </tr>
        <tr>
          <td align="right">
-           allocation hours:
+           Hours:
          </td>
          <td>
-           <input type="Number" name="allocationhours" />
+           <input type="Number" name="allocationhours" required />
          </td>
        </tr>
        <tr>
          <td align="right">
-           allocation rate:
+           Rate:
          </td>
          <td>
-           <input type="Number" name="allocationrate" />
+           <input type="Number" name="allocationrate" required />
          </td>
+       </tr>
+       <tr>
+         <td align="right">
+         Date:
+       </td>
+       <td><input type="text" id="datepicker" name="allocationdate" required>
+       </td>
        </tr>
          </table>
          <!-- title: <input type="text" name="title" /><br/>
@@ -62,7 +78,7 @@
          allocationhours: <input type="Number" name="allocationhours" /><br/> -->
     <br/><br>
 
-           <input id="submenu" type="submit" name="" value="Create Workauthorization"/>
+           <input id="submenu" type="submit" name="" value="Create Work Authorization"/>
     </form>
 </div>
 <% include ../../templates/footer.ejs %>

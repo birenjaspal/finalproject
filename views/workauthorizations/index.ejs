@@ -32,10 +32,11 @@
   <table id="example" class="display" cellspacing="0" width="100%">
   <thead>
     <tr>
-      <th> title </th>
-      <th> chargecode </th>
-      <th> allocationname </th>
-      <th> allocationhours </th>
+      <th> Project </th>
+      <th> Charge Code </th>
+      <th> Staff Name </th>
+      <th> Hours </th>
+      <th> Date </th>
     </tr>
   </thead>
   <tbody>
@@ -46,6 +47,7 @@
               <td><%=workauthorizations[i].chargecode %></td>
                 <td><%=workauthorizations[i].allocationname %></td>
                   <td><%=workauthorizations[i].allocationhours %></td>
+                    <td><%=workauthorizations[i].allocationdate.getFullYear()%> -  <%=workauthorizations[i].allocationdate.getMonth() %></td>
             </tr>
             <% } %>
 </tbody>

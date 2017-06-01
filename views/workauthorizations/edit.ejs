@@ -5,7 +5,16 @@
     <meta charset="utf-8">
     <title>SOL</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <link rel="stylesheet" href="/resources/demos/style.css">
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <script>
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
+</script>
   </head>
   <body>
 
@@ -17,45 +26,53 @@
       <table>
         <tr>
           <td align="right">
-            title:
+            Project:
           </td>
           <td>
-            <input type="text" name="title" value="<%=workauthorization.title%>"/>
+            <input type="text" name="title" value="<%=workauthorization.title%>" required />
           </td>
         </tr>
         <tr>
           <td align="right">
-            chargecode:
+            Charge Code:
           </td>
           <td>
-            <input type="text" name="chargecode" value="<%=workauthorization.chargecode%>"/>
+            <input type="text" name="chargecode" value="<%=workauthorization.chargecode%>" required />
           </td>
         </tr>
         <tr>
           <td align="right">
-            name:
+            Name:
           </td>
           <td>
-            <input type="text" name="allocationname" value="<%=workauthorization.allocationname%>"/>
+            <input type="text" name="allocationname" value="<%=workauthorization.allocationname%>" required />
           </td>
         </tr>
         <tr>
           <td align="right">
-            hours:
+            Hours:
           </td>
           <td>
-            <input type="Number" name="allocationhours" value="<%=workauthorization.allocationhours%>"/>
+            <input type="Number" name="allocationhours" value="<%=workauthorization.allocationhours%>" required />
           </td>
         </tr>
         <tr>
           <td align="right">
-            rate:
+            Rate:
           </td>
           <td>
-            <input type="Number" name="allocationrate" value="<%=workauthorization.allocationrate%>"/>
+            <input type="Number" name="allocationrate" value="<%=workauthorization.allocationrate%>" required />
           </td>
+        </tr>
+        <tr>
+          <td align="right">
+          Date:
+        </td>
+        <td><input type="text" id="datepicker" name="allocationdate" value="<%=workauthorization.allocationdate%>" required >
+        </td>
         </tr>
       </table>
+</br>
       <input id="submenu" type="submit" name="" value="Submit Changes" />
     </form>
 

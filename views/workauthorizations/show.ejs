@@ -16,11 +16,12 @@
         <a id="submenu" href="/sol/workauthorizations/<%=workauthorization._id%>/edit">EDIT</a>
 
         <ul>
-          <li> title: <%=workauthorization.title%></li>
-          <li> chargecode: <%=workauthorization.chargecode%></li>
-          <li> allocation name: <%=workauthorization.allocationname%></li>
-          <li> allocation hours: <%=workauthorization.allocationhours%></li>
-          <li> allocation rate: <%=workauthorization.allocationrate%></li>
+          <li> Project: <%=workauthorization.title%></li>
+          <li> Charge Code: <%=workauthorization.chargecode%></li>
+          <li> Staff Name: <%=workauthorization.allocationname%></li>
+          <li> Hours: <%=workauthorization.allocationhours%></li>
+          <li> Rate: <%=workauthorization.allocationrate%></li>
+          <li> Date: <%=workauthorization.allocationdate.getFullYear()%> -  <%=workauthorization.allocationdate.getMonth() %></li>
         </ul>
 
 

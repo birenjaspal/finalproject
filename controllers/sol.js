@@ -7,7 +7,7 @@ var Workauthorizations = require('../models/workauthorizations.js');
 
 
 //////////////////////////Workauthorization Routes/////////////////////////////////////
-//get route for creating new transceiver
+//get route for creating new workauthorization
 router.get('/workauthorizations/newworkauthorization', function(req, res){
   if(req.session.currentuser){
     res.render('workauthorizations/new.ejs', {
@@ -18,7 +18,7 @@ router.get('/workauthorizations/newworkauthorization', function(req, res){
   }
 });
 
-//post route for creating new transceiver
+//post route for creating new workauthorization
 router.post('/workauthorizations', function(req, res){
   if(req.session.currentuser){
     Workauthorizations.create(req.body, function(){
@@ -30,7 +30,7 @@ router.post('/workauthorizations', function(req, res){
 });
 
 
-//get route for displaying index of transceivers
+//get route for displaying index of workauthorizations
 router.get('/workauthorizations/index', function(req, res){
   if(req.session.currentuser){
     Workauthorizations.find({}, function(error, allWorkauthorizations){
@@ -57,7 +57,7 @@ router.get('/myauthorizations/index', function(req, res){
   }
 });
 
-//delete route for deleting transceiver
+//delete route for deleting workauthorization
 router.delete('/workauthorizations/deleteworkauthorization/:id', function(req, res){
   if(req.session.currentuser){
     Workauthorizations.findByIdAndRemove(req.params.id, function(err, data){
@@ -68,14 +68,14 @@ router.delete('/workauthorizations/deleteworkauthorization/:id', function(req, r
   }
 });
 
-//get route for editing transceiver
+//get route for editing workauthorization
 router.get('/workauthorizations/:id/edit', function(req, res){
   if(req.session.currentuser){
-    Workauthorizations.findById(req.params.id, function(err, foundWorkauthorization){ //find the transceiver
+    Workauthorizations.findById(req.params.id, function(err, foundWorkauthorization){ //find the workauthorization
         res.render(
     		'workauthorizations/edit.ejs',
     		{
-    			workauthorization: foundWorkauthorization, //pass in found transceiver
+    			workauthorization: foundWorkauthorization, //pass in found workauthorization
           currentUser: req.session.currentuser
     		});
     });
@@ -86,7 +86,7 @@ router.get('/workauthorizations/:id/edit', function(req, res){
 
 
 
-//put route for editing transceiver
+//put route for editing workauthorization
 router.put('/workauthorizations/:id', function(req, res){
   if(req.session.currentuser){
     //{new: true} tells mongoose to send the updated model into the callback
@@ -98,7 +98,7 @@ router.put('/workauthorizations/:id', function(req, res){
   }
 });
 
-//get route for showing transceiver detail
+//get route for showing workauthorization detail
 router.get('/workauthorizations/:id', function(req, res){
   if(req.session.currentuser){
     Workauthorizations.findById(req.params.id, function(err, foundWorkauthorization){
@@ -124,9 +124,9 @@ router.post('/', function(req, res){
 //get route for displaying map
 // router.get('/map', function(req, res){
 //   if(req.session.currentuser){
-//     Transceivers.find({}, function(error, allTransceivers){
+//     workauthorizations.find({}, function(error, allworkauthorizations){
 //       res.render('map/footprintmap.ejs', {
-//         transceivers: allTransceivers,
+//         workauthorizations: allworkauthorizations,
 //         currentUser: req.session.currentuser
 //       });
 //     });

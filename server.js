@@ -26,6 +26,12 @@ app.use('/sessions', sessionsController);
 var solController = require('./controllers/sol.js');
 app.use('/sol', solController);
 
+var seedUserController = require('./controllers/seedUserController');
+app.use('/seeduser', seedUserController);
+
+var seedWorkController = require('./controllers/seedWorkController');
+app.use('/seedwork', seedWorkController);
+
 app.get('/', function(req, res){
     res.render('index.ejs', {
         currentUser: req.session.currentuser

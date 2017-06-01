@@ -5,8 +5,10 @@ var workauthorizationSchema = mongoose.Schema({
     chargecode: String,
     allocationname: String,
     allocationhours: Number,
-    allocationrate: Number
+    allocationrate: Number,
     // allocation: [{name: String, hours: Number, rate: Number}]
+    allocationdate: Date,
+    hoursburned: Number
 });
 
 var Workauthorization = mongoose.model('Workauthorization', workauthorizationSchema);
