@@ -57,6 +57,18 @@ router.get('/myauthorizations/index', function(req, res){
   }
 });
 
+//put route for editing workauthorization
+router.put('/myauthorizations/:id', function(req, res){
+  if(req.session.currentuser){
+    //{new: true} tells mongoose to send the updated model into the callback
+    Workauthorizations.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, updatedModel){
+        res.redirect('/sol/myauthorizations/index');
+    });
+  } else {
+    res.render('sessions/tryagain.ejs');
+  }
+});
+
 //delete route for deleting workauthorization
 router.delete('/workauthorizations/deleteworkauthorization/:id', function(req, res){
   if(req.session.currentuser){
