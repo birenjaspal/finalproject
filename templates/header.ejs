@@ -7,6 +7,11 @@
     </div>
     <div class="topbar-right">
       <% if(currentUser) { %>
+        <div class="aParent">
+        <div>
+        <img width="60px" height="60px" src=<%=currentUser.img%>>
+      </div>
+      <div>
         Welcome <%=currentUser.username%>!
         <nav>
           <form action="/sessions?_method=DELETE" method="POST">
@@ -15,7 +20,8 @@
         </nav>
         <header>
       <body background=none>
-
+      </div>
+    </div>
       <% } else { %>
         <!-- <a href="/sessions/new">Log In</a> -->
         <form action="/sessions" method="POST">

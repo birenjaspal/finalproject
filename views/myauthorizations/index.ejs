@@ -72,27 +72,27 @@
               <td>
 
                 <!-- Sign Up Button START -->
-<button id="openModal" class="modal-buttons"><%=workauthorizations[i].hoursburned; %></button>
+<button class="openModal" ><%= workauthorizations[i].hoursburned;%></button>
 <!-- Sign Up Button END -->
 <!-- Modal START-->
-<div id="modal">
+<div class="modal">
   <!-- Modal text information START -->
-  <div id="modal-text-box">
-    <button title="Close" id="close" class="modal-buttons" style="float: right;">X</button>
+  <div class="modal-text-box">
+    <button title="Close" class="close" class="modal-color-buttons" style="float: right;">X</button>
 
-    <h2 id="modal-header">Burned Hours</h2>
-    <div id="modal-body">
+    <h2 class="modal-header">Burned Hours</h2>
+    <div class="modal-body">
 
 
-      <form id="subtitle" action="/sol/workauthorizations/<%=workauthorizations[i].id%>?_method=PUT" method="Post">
+      <form class="subtitle" action="/sol/workauthorizations/<%=workauthorizations[i].id%>?_method=PUT" method="Post">
   <input type="text" name="hoursburned" value="<%=workauthorizations[i].hoursburned; %>" />
 
-  <input id="submenu" type="submit" name="" class="modal-buttons" value="Submit Changes" />
+  <input class="submenu" type="submit" name="" value="Submit Changes" />
 </form>
 
     </div>
     <!-- Button to close the modal START-->
-    <div id="modal-footer">
+    <div class="modal-footer">
 
     </div>
     <!-- Button to close the modal END-->

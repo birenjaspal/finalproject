@@ -1,12 +1,12 @@
 console.log("test");
 // Grabbing About the Game button
-var $openBtn = $('#openModal');
+var $openBtn = $('.openModal');
 
 // Grabbing modal element
-var $modal = $('#modal');
+var $modal = $('.modal');
 
 // Grabbing close button
-var $closeBtn = $('#close');
+var $closeBtn = $('.close');
 
 // Event handler to open the modal
 var openModal = function(){
@@ -28,3 +28,10 @@ $closeBtn.on('click', closeModal);
 
 //Make a setTimeout for the modal to automatically pop-up after 5 seconds.
 // setTimeout(openModal, 5000);
+
+// $(document).ready(function(){
+//     $('.modal-color-buttons').each(function(){
+//         if(Number($(this).text().replace(/[^0-9\.]+/g,"")) < -5 )
+//             $(this).addClass('overrun');
+//     });
+// });

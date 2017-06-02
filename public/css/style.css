@@ -9,6 +9,11 @@ body {
 background-position: center;
 }
 
+.aParent div {
+  float: left;
+  clear: none;
+  padding: 10px;
+}
 
 a{
   color: lightgrey;
@@ -264,7 +269,7 @@ li {
     text-align: center;
   font-style: italic;
 }
-#modal {
+.modal {
 
 	position: fixed;
 	top: 0;
@@ -283,7 +288,7 @@ li {
 	display: none;
 }
 
-#modal-text-box {
+.modal-text-box {
 	background-color: white;
 
 	height: 350px;
@@ -298,16 +303,16 @@ li {
 	line-height: 120%;
 }
 
-#modal-header {
+.modal-header {
 	font-family: "Arial Black";
 	padding-bottom: 15px;
 }
 
-#modal-body {
+.modal-body {
 	font-family: arial;
 }
 
-#modal-footer {
+.modal-footer {
 	font-family: arial;
 	text-align: right;
 }
@@ -323,4 +328,22 @@ li {
 	font-family: arial;
 
 	cursor: pointer;
+}
+
+.modal-color-buttons {
+	padding: 14px 18px;
+	background-color: #677996;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+
+	color: white;
+	font-family: arial;
+
+	cursor: pointer;
+}
+
+.overrun{
+    color:#ff0000;
+    font-weight:bold;
 }
