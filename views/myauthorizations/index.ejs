@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>SOL</title>
+      <!-- <script src="app.js"></script> -->
+
+
     <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
     <script
@@ -12,7 +15,7 @@
 
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 
-      <script src="modal.js"></script>
+
 <% include ../partials/head %>
 
   <link rel="stylesheet" href="../../css/style.css">
@@ -67,7 +70,36 @@
                   <%=workauthorizations[i].allocationhours; %>
                 </td>
               <td>
-                <%=workauthorizations[i].hoursburned; %>
+
+                <!-- Sign Up Button START -->
+<button id="openModal" class="modal-buttons"><%=workauthorizations[i].hoursburned; %></button>
+<!-- Sign Up Button END -->
+<!-- Modal START-->
+<div id="modal">
+  <!-- Modal text information START -->
+  <div id="modal-text-box">
+    <button title="Close" id="close" class="modal-buttons" style="float: right;">X</button>
+
+    <h2 id="modal-header">Burned Hours</h2>
+    <div id="modal-body">
+
+
+      <form id="subtitle" action="/sol/workauthorizations/<%=workauthorizations[i].id%>?_method=PUT" method="Post">
+  <input type="text" name="hoursburned" value="<%=workauthorizations[i].hoursburned; %>" />
+
+  <input id="submenu" type="submit" name="" class="modal-buttons" value="Submit Changes" />
+</form>
+
+    </div>
+    <!-- Button to close the modal START-->
+    <div id="modal-footer">
+
+    </div>
+    <!-- Button to close the modal END-->
+  </div>
+    <!-- Modal text information END -->
+</div>
+<!-- Modal END -->
               </td>
 
           </tr>
@@ -80,6 +112,6 @@
       </div>
       <% include ../../templates/footer.ejs %>
 
-
+  <script src="../../css/test.js"></script>
   </body>
 </html>

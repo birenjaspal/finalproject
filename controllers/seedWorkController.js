@@ -12,7 +12,7 @@ var newWork =  [{
   allocationhours: 160,
   allocationrate: 120,
   allocationdate: "2017-06-15T04:00:00Z",
-  hoursburned: 0
+  hoursburned: 3
 },
 
 {
@@ -22,7 +22,7 @@ var newWork =  [{
   allocationhours: 40,
   allocationrate: 220,
   allocationdate: "2017-05-15T04:00:00Z",
-  hoursburned: 0
+  hoursburned: 2
 }];
 
 router.get('/', function(req, res) {
