@@ -53,65 +53,67 @@
           </tr>
         </thead>
         <tbody>
-            <% for(var i = 0; i < workauthorizations.length; i++){ %>
-            <%  if (workauthorizations[i].allocationname==currentUser.username) { %>
-                <tr>
-                  <td>
-            <%=workauthorizations[i].title; %>
-          </td>
-          <td>
-            <%=workauthorizations[i].chargecode; %>
-          </td>
-
-            <td>
+        <% for(let i = 0; i < workauthorizations.length; i++){ %>
+          <%= console.log("this is in the begining:" + i); %>
+          <%  if (workauthorizations[i].allocationname==currentUser.username) { %>
+            <tr>
+              <td>
+                <%=workauthorizations[i].title; %>
+              </td>
+              <td>
+                <%=workauthorizations[i].chargecode; %>
+              </td>
+              <td>
                 <%=workauthorizations[i].allocationdate.getFullYear()%> -  <%=workauthorizations[i].allocationdate.getMonth() %>
               </td>
               <td>
                   <%=workauthorizations[i].allocationhours; %>
-                </td>
-              <td>
-
-                <!-- Sign Up Button START -->
-<button class="openModal" ><%= workauthorizations[i].hoursburned;%></button>
-<!-- Sign Up Button END -->
-<!-- Modal START-->
-<div class="modal">
-  <!-- Modal text information START -->
-  <div class="modal-text-box">
-    <button title="Close" class="close" class="modal-color-buttons" style="float: right;">X</button>
-
-    <h2 class="modal-header">Burned Hours</h2>
-    <div class="modal-body">
-
-
-      <form class="subtitle" action="/sol/myauthorizations/<%=workauthorizations[i].id%>?_method=PUT" method="Post">
-  <input type="text" name="hoursburned" value="<%=workauthorizations[i].hoursburned; %>" />
-
-  <input class="submenu" type="submit" name="" value="Submit Changes" />
-</form>
-
-    </div>
-    <!-- Button to close the modal START-->
-    <div class="modal-footer">
-
-    </div>
-    <!-- Button to close the modal END-->
-  </div>
-    <!-- Modal text information END -->
-</div>
-<!-- Modal END -->
               </td>
+              <td>
+                <!-- Sign Up Button START -->
+                <button onclick="openModal(<%=i%>)" ><%= workauthorizations[i].hoursburned;%> <%= console.log("here" + workauthorizations[i]) %></button>
+                  <!-- Sign Up Button END -->
+                  <!-- Modal START-->
+                  <% (function(j){ %>
 
-          </tr>
 
-            <% } else { %>
-                <% } %>
-              <% } %>
-            </tbody>
-          </table>
-      </div>
+                  <div class="modal" id= <%= j%> >
+                      <%= console.log("this is in the modal:" + j); %>
+                    <!-- Modal text information START -->
+                    <div class="modal-text-box">
+                      <button title="Close" class="close" style="float: right;">X</button>
+                      <h2 class="modal-header">Burned Hours</h2>
+                      <div class="modal-body">
+
+                        <form class="subtitle" action="/sol/myauthorizations/<%=workauthorizations[j].id%>?_method=PUT" method="Post">
+                            <%= console.log("this is the modal id: " + workauthorizations[j].id ); %>
+                          <input type="text" name="hoursburned" value="<%=workauthorizations[j].hoursburned; %>" />
+
+                          <input class="submenu" type="submit" name="" value="Submit Changes" />
+                        </form>
+
+                      </div>
+                      <!-- Button to close the modal START-->
+                      <div class="modal-footer">
+                      </div>
+                      <!-- Button to close the modal END-->
+                    </div>
+                    <!-- Modal text information END -->
+                  </div>
+                <% })(i) %>
+
+                  <!-- Modal END -->
+              </td>
+            </tr>
+            <%= console.log("this is in the if:" + i); %>
+          <% } %>
+          <%= console.log("this is i:" + i); %>
+        <% } %>
+        </tbody>
+        </table>
+    </div>
       <% include ../../templates/footer.ejs %>
 
-  <script src="../../css/test.js"></script>
+  <script src="../../js/test.js"></script>
   </body>
 </html>

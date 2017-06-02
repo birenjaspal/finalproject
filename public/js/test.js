@@ -1,4 +1,4 @@
-console.log("test");
+console.log("testing");
 // Grabbing About the Game button
 var $openBtn = $('.openModal');
 
@@ -9,9 +9,9 @@ var $modal = $('.modal');
 var $closeBtn = $('.close');
 
 // Event handler to open the modal
-var openModal = function(){
-  console.log("open clicked");
-  $modal.css('display', 'block');
+var openModal = function(i){
+  console.log("passing i: "+ i);
+  $("#"+i).css('display', 'block');
 }
 
 // Event handler to close the modal
