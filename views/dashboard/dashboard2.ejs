@@ -34,12 +34,23 @@
       <script>
         var datahours = [];
         var datalabels = [];
+        var columnexists = 0;
+
         <% for (var i=0; i< workauthorizations.length; i++){ %>
-          datahours [<%= i %>] = <%=workauthorizations[i].allocationhours %>
+          <% for (var j=0; j< (this.datalabels).length; j++){ %>
+            <% if (workauthorizations[i].title==datalabels[j]){ %>
+              datahours[ <%=j%>]=datahours[<%=j%>]+workauthorizations[<%=i%>].allocationhours;
+              <% newcolumn++; %>
+            <% } else { %>
+            <% } %>
         <% } %>
-        <% for (var i=0; i< workauthorizations.length; i++){ %>
-          datalabels [<%= i %>] = "<%=workauthorizations[i].title %>"
-        <% } %>
+            <% if (columnexists == 0){ %>
+              datalabels.push("<%=workauthorizations[i].title%>");
+              datahours.push("<%=workauthorizations[i].allocationhours%>");
+              workauthorizations.shift();
+              <% } %>
+          <%  newcolumn=0; %>
+      <% } %>
 
 
         var ctx = document.getElementById("myChart").getContext('2d');
