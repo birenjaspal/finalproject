@@ -33,13 +33,24 @@
 
       <script>
         var datahours = [];
-        var datalabels = [];
-        <% for (var i=0; i< workauthorizations.length; i++){ %>
-          datahours [<%= i %>] = <%=workauthorizations[i].allocationhours %>
-        <% } %>
-        <% for (var i=0; i< workauthorizations.length; i++){ %>
-          datalabels [<%= i %>] = "<%=workauthorizations[i].title %>"
-        <% } %>
+      var datalabels = [];
+
+
+        <% for ( var j=0; j< workauthorizations.length; j++) { %>
+          // puts all the unique workauthorizations.titles in an array
+          if (datalabels.indexOf("<%= workauthorizations[j].title %>") == -1){
+            datalabels.push( "<%= workauthorizations[j].title %>")
+            datahours.push( <%= workauthorizations[j].allocationhours %> )
+            // console.log('new entry' + datalabels[0])
+             }
+                // if the value already exists, add the hours
+          else{
+            datahours[datalabels.indexOf( "<%= workauthorizations[j].title %>" )] +=
+             <%= workauthorizations[j].allocationhours %>
+            console.log('old entry' + datahours)
+          }
+         <% } %>
+
 
 
         var ctx = document.getElementById("myChart").getContext('2d');
