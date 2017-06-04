@@ -31,10 +31,10 @@
         <h1 id="subtitle"> Planned vs Actual Hours Burned For Dept </h1>
         <canvas id="myChart3" width="100%" height="50%"></canvas>
       </div>
-      <div class="col-md-6" style="background-color:yellow;">
-        <!-- <h1 id="subtitle"> Forecasting Labor </h1>
-        <canvas id="myChart4" width="100%" height="50%"></canvas>
-      </div> -->
+      <div class="col-md-6" style="background-color:white;">
+        <h1 id="subtitle"> Forecasting Utilization </h1>
+        <!-- <canvas id="myChart4" width="100%" height="50%"></canvas> -->
+      </div>
     </div>
 </div>
 

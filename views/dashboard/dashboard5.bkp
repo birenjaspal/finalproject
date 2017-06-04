@@ -22,7 +22,7 @@
         <canvas id="myChart" width="100%" height="50%"></canvas>
       </div>
       <div class="col-md-6" style="background-color:white;">
-        <h1 id="subtitle"> Planned Revenue Per Project ($) </h1>
+        <h1 id="subtitle"> Planned Revenue Per Project ($)</h1>
         <canvas id="myChart2" width="100%" height="50%"></canvas>
       </div>
     </div>
@@ -33,7 +33,7 @@
       </div>
       <div class="col-md-6" style="background-color:white;">
         <h1 id="subtitle"> Forecasting Utilization </h1>
-        <canvas id="myChart4" width="100%" height="50%"></canvas>
+        <!-- <canvas id="myChart4" width="100%" height="50%"></canvas> -->
       </div>
     </div>
 </div>
@@ -271,95 +271,102 @@ labelString: 'Project'
                       var myChart3 =  new Chart(ctx3, {
                        data: data3 ,
                        type: 'line'
-                      ,  options: {
-                      //    scales: {
-                      //      xAxes: [{
-                      //        type: 'time',
-                      //        unit: 'day',
-                      //        unitStepSize: 1,
-                      //        time: {
-                      //          displayFormats: {
-                      //            'day': 'MMM DD'
-                      //          }
-                      //        }
-                      //      }]
-                      //    }
+                       options: {
+                        //  legend: {
+                        //    display: false
+                        //  },
+                        //  scales: {
+                        //    yAxes: [{
+                        //      ticks: {
+                        //        beginAtZero:true
+                        //      },
+                        //      scaleLabel: {
+                        //        display: true,
+                        //        labelString: 'Staff'
+                        //      }
+                        //    }],  xAxes: [{
+                        //      scaleLabel: {
+                        //        display: true,
+                        //        labelString: '% Billable'
+                        //      }
+                        //    }],
+                        //  }
                        }
                    });
 
                         //*************chart4***********
-                        var datastaffnames = [];
-                        var databillable =[];
+                      // var datahours = [];
+                      // var datalabels = [];
+                      var datastaffnames = [];
+                      var databillable =[];
 
-                          <% for ( var j=0; j< workauthorizations.length; j++) { %>
-                            // puts all the unique workauthorizations.allocationname in an array
-                            if (datastaffnames.indexOf("<%= workauthorizations[j].allocationname %>") == -1){
-                              datastaffnames.push( "<%= workauthorizations[j].allocationname %>")
-                              databillable.push( <%= workauthorizations[j].allocationhours %> )
-                              // console.log('new entry' + datastaffnames)
-                               }
-                                  // if the value already exists, add the hours
-                            else{
-                              databillable[datastaffnames.indexOf( "<%= workauthorizations[j].allocationname %>" )] +=
-                               <%= workauthorizations[j].allocationhours %>
-                              console.log('old entry ' + databillable)
-                            }
-                           <% } %>
+                        <% for ( var j=0; j< workauthorizations.length; j++) { %>
+                          // puts all the unique workauthorizations.allocationname in an array
+                          if (datastaffnames.indexOf("<%= workauthorizations[j].allocationname %>") == -1){
+                            datastaffnames.push( "<%= workauthorizations[j].allocationname %>")
+                            databillable.push( <%= workauthorizations[j].allocationhours %> )
+                            // console.log('new entry' + datalabels[0])
+                             }
+                                // if the value already exists, add the hours
+                          else{
+                            databillable[datastaffnames.indexOf( "<%= workauthorizations[j].allocationname %>" )] +=
+                             <%= workauthorizations[j].allocationhours %>
+                            // console.log('old entry' + datahours)
+                          }
+                         <% } %>
 
 
 
-                          var ctx4 = document.getElementById("myChart4").getContext('2d');
-                          var myChart4 = new Chart(ctx4, {
+                        var ctx4 = document.getElementById("myChart4").getContext('2d');
+                        var myChart4 = new Chart(ctx4, {
 
-                            type: 'horizontalBar',
-                            data: {
-                              labels: datastaffnames,
-                              datasets: [{
-                                label: 'Staff',
-                                data: databillable,
-                                backgroundColor: [
-                                               'rgba(255, 99, 132, 0.2)',
-                                               'rgba(54, 162, 235, 0.2)',
-                                               'rgba(255, 206, 86, 0.2)',
-                                               'rgba(75, 192, 192, 0.2)',
-                                               'rgba(153, 102, 255, 0.2)',
-                                               'rgba(255, 159, 64, 0.2)'
-                                ],
-                                borderColor: [
-                                               'rgba(255,99,132,1)',
-                                               'rgba(54, 162, 235, 1)',
-                                               'rgba(255, 206, 86, 1)',
-                                               'rgba(75, 192, 192, 1)',
-                                               'rgba(153, 102, 255, 1)',
-                                               'rgba(255, 159, 64, 1)'
-                                ],
-                                borderWidth: 1
-                              }]
+                          type: 'horizontalBar',
+                          data: {
+                            labels: databillable,
+                            datasets: [{
+                              label: 'Staff',
+                              data: datastaffnames,
+                              backgroundColor: [
+                                             'rgba(255, 99, 132, 0.2)',
+                                             'rgba(54, 162, 235, 0.2)',
+                                             'rgba(255, 206, 86, 0.2)',
+                                             'rgba(75, 192, 192, 0.2)',
+                                             'rgba(153, 102, 255, 0.2)',
+                                             'rgba(255, 159, 64, 0.2)'
+                              ],
+                              borderColor: [
+                                             'rgba(255,99,132,1)',
+                                             'rgba(54, 162, 235, 1)',
+                                             'rgba(255, 206, 86, 1)',
+                                             'rgba(75, 192, 192, 1)',
+                                             'rgba(153, 102, 255, 1)',
+                                             'rgba(255, 159, 64, 1)'
+                              ],
+                              borderWidth: 1
+                            }]
+                          },
+                          options: {
+                            legend: {
+                              display: false
                             },
-                            options: {
-                              legend: {
-                                display: false
-                              },
-                              scales: {
-                                yAxes: [{
-                                  ticks: {
-                                    beginAtZero:true
-                                  },
-                                  scaleLabel: {
-                                    display: true,
-                                    labelString: 'Staff'
-                                  }
-                                }],  xAxes: [{
-                                  scaleLabel: {
-                                    display: true,
-                                    labelString: '% Billable'
-                                  }
-                                }],
-                              }
+                            scales: {
+                              yAxes: [{
+                                ticks: {
+                                  beginAtZero:true
+                                },
+                                scaleLabel: {
+                                  display: true,
+                                  labelString: 'Staff'
+                                }
+                              }],  xAxes: [{
+                                scaleLabel: {
+                                  display: true,
+                                  labelString: '% Billable'
+                                }
+                              }],
                             }
-                          });
-
-
+                          }
+                        });
 
         </script>
       </br></br>
