@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js" charset="utf-8"></script>
+      <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>SOL</title>
+  </head>
+  <body>
+    <% include ../../templates/header.ejs %>
+    <div class="dashboard-container">
+<div class="column" style = "height: 100%; width: 30%; margin: 0 auto;">
+  <div class="row" style="height: 60%; width: 30%; margin: 0 auto; background-color: white;">
+      <h1 id="subtitle"> Total Hours Allocated Per Project </h1>
+      <canvas id="myChart" width="100%" height="50%"></canvas>
+  </div>
+  </br></br></br>
+
+    <div class="row" style="height: 60%; width: 30%; margin: 0 auto; background-color: white;">
+        <h1 id="subtitle"> Planned Costs Per Project </h1>
+        <canvas id="myChart2" width="100%" height="50%"></canvas>
+    </div>
+  </div>
+  <div class="column" style = "height: 100%; width: 30%; margin: 0 auto; ">
+
+    <div class="row" style="height: 60%; width: 30%; margin: 0 auto; background-color: white; ">
+        <h1> quandrant 3 </h1>
+      </div>
+      <div class="row" style="height: 60%; width: 30%; margin: 0 auto; background-color: white;">
+        <h1> quadrant 4 </h1>
+      </div>
+    </div>
+</div>
+
+      <script>
+        var datahours = [];
+      var datalabels = [];
+
+
+        <% for ( var j=0; j< workauthorizations.length; j++) { %>
+          // puts all the unique workauthorizations.titles in an array
+          if (datalabels.indexOf("<%= workauthorizations[j].title %>") == -1){
+            datalabels.push( "<%= workauthorizations[j].title %>")
+            datahours.push( <%= workauthorizations[j].allocationhours %> )
+            // console.log('new entry' + datalabels[0])
+             }
+                // if the value already exists, add the hours
+          else{
+            datahours[datalabels.indexOf( "<%= workauthorizations[j].title %>" )] +=
+             <%= workauthorizations[j].allocationhours %>
+            // console.log('old entry' + datahours)
+          }
+         <% } %>
+
+
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+
+          type: 'bar',
+          data: {
+            labels: datalabels,
+            datasets: [{
+              label: '# of Hours',
+              data: datahours,
+              backgroundColor: [
+                             'rgba(255, 99, 132, 0.2)',
+                             'rgba(54, 162, 235, 0.2)',
+                             'rgba(255, 206, 86, 0.2)',
+                             'rgba(75, 192, 192, 0.2)',
+                             'rgba(153, 102, 255, 0.2)',
+                             'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                             'rgba(255,99,132,1)',
+                             'rgba(54, 162, 235, 1)',
+                             'rgba(255, 206, 86, 1)',
+                             'rgba(75, 192, 192, 1)',
+                             'rgba(153, 102, 255, 1)',
+                             'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            legend: {
+              display: false
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero:true
+                },
+                scaleLabel: {
+      display: true,
+      labelString: 'Total Hours'
+    }
+  }],  xAxes: [{
+      scaleLabel: {
+display: true,
+labelString: 'Project Name'
+}
+}],
+
+            }
+          }
+        });
+
+        //*************chart2***********
+
+
+        var dataplannedcost = [];
+        var dataactualcost = [];
+      var datalabels2 = [];
+
+
+        <% for ( var j=0; j< workauthorizations.length; j++) { %>
+          // puts all the unique workauthorizations.titles in an array
+          if (datalabels2.indexOf("<%= workauthorizations[j].title %>") == -1){
+            datalabels2.push( "<%= workauthorizations[j].title %>")
+            dataplannedcost.push( <%= workauthorizations[j].allocationhours %> * <%= workauthorizations[j].allocationrate %>)
+            // console.log('new entry' + datalabels[0])
+             }
+                // if the value already exists, add the hours
+          else{
+            dataplannedcost[datalabels.indexOf( "<%= workauthorizations[j].title %>" )] +=
+             <%= workauthorizations[j].allocationhours %> * <%= workauthorizations[j].allocationrate %>
+            console.log('old entry2 ' + dataplannedcost)
+          }
+         <% } %>
+         data2 = {
+             datasets: [{
+                 data: dataplannedcost,
+                 backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                 ],
+                 borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                 ],
+                 borderWidth: 1
+             }],
+
+             // These labels appear in the legend and in the tooltips when hovering different arcs
+             labels: datalabels2,
+
+         };
+
+        var ctx2 = document.getElementById("myChart2").getContext('2d');
+
+            var myChart2 =  new Chart(ctx2, {
+             data: data2,
+             type: 'polarArea'
+         });
+
+
+        </script>
+      <% include ../../templates/footer.ejs %>
+  </body>
+</html>
