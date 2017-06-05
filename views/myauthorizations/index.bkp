@@ -70,24 +70,8 @@
                   <%=workauthorizations[i].allocationhours; %>
               </td>
               <td>
-
-
                 <!-- Sign Up Button START -->
-                <button id="button+<%=i%>" onclick="openModal(<%=i%>)" style="width:75px"><%= workauthorizations[i].hoursburned;%> <%= console.log("here" + workauthorizations[i]) %></button>
-
-                <script>
-                var element = document.getElementById("button+<%=i%>");
-                if (<%= workauthorizations[i].hoursburned > workauthorizations[i].allocationhours; %> ) {
-                  element.style.background = "#D54D4D";
-                }
-                else if (<%= (workauthorizations[i].allocationhours - workauthorizations[i].hoursburned) <5 %> ){
-                  element.style.background = "#D5D54D";
-                }
-                else { element.style.background = "#4DD57A";}
-
-                </script>
-
-
+                <button onclick="openModal(<%=i%>)" style="width:75px"><%= workauthorizations[i].hoursburned;%> <%= console.log("here" + workauthorizations[i]) %></button>
                   <!-- Sign Up Button END -->
                   <!-- Modal START-->
                   <% (function(j){ %>
@@ -105,7 +89,7 @@
                             <%= console.log("this is the modal id: " + workauthorizations[j].id ); %>
                           <input type="text" name="hoursburned" value="<%=workauthorizations[j].hoursburned; %>" />
 
-                          <input class="submenu" type="submit" name="" value="Submit Changes" onclick="myFunction()" />
+                          <input class="submenu" type="submit" name="" value="Submit Changes" />
                         </form>
 
                       </div>

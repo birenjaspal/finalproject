@@ -14,6 +14,13 @@ body {
     background-color: white;
 
 }
+.col-md-6 {
+  border-style: solid;
+  border-top-color: lightgrey;
+  border-bottom-color: white;
+  border-left-color: white;
+  border-right-color: white;
+}
 
 .dashboardcontainer {
   width: 90%;
