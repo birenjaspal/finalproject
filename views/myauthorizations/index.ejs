@@ -26,12 +26,12 @@
 
       <div id="maincontent">
         <h1 id="subtitle">My Authorization(s)</h1>
-
+        <div id="tablecontent">
       <script type="text/javascript">
         $(document).ready( function () {
             $('#example').DataTable({
               scrollY: 300,
-    paging: false,
+    paging: true,
     "autoWidth": true,
     "searching": true,
     "ordering": true
@@ -111,6 +111,7 @@
         <% } %>
         </tbody>
         </table>
+      </div>
     </div>
       <% include ../../templates/footer.ejs %>
 

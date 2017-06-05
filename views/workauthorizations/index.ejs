@@ -15,12 +15,12 @@
         <h1 id="subtitle">Team Authorizations</h1>
 
         <a id="submenu" href="/sol/workauthorizations/newworkauthorization">ADD WORK AUTHORIZATION</a><br/>
-
+<div id="tablecontent">
         <script type="text/javascript">
           $(document).ready( function () {
               $('#example').DataTable({
                 scrollY: 300,
-      paging: false,
+      paging: true,
       "autoWidth": true,
       "searching": true,
       "ordering": true
@@ -29,7 +29,9 @@
           } );
   </script>
 
-  <table id="example" class="display" cellspacing="0" width="100%">
+
+  <table id="example" class="display" cellspacing="0" width="80%">
+    </div>
   <thead>
     <tr>
       <th> Project </th>
@@ -43,7 +45,7 @@
             <% for(var i = 0; i < workauthorizations.length; i++){ %>
                 <tr>
                   <td>
-              <a href="/sol/workauthorizations/<%=workauthorizations[i]._id%>"><%=workauthorizations[i].title; %></a></td>
+              <a style="color: black" href="/sol/workauthorizations/<%=workauthorizations[i]._id%>"><%=workauthorizations[i].title; %></a></td>
               <td><%=workauthorizations[i].chargecode %></td>
                 <td><%=workauthorizations[i].allocationname %></td>
                   <td><%=workauthorizations[i].allocationhours %></td>

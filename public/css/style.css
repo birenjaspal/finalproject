@@ -1,12 +1,33 @@
 
 body {
-    background-color: #64484C;
+    background-color: white;
     /*#2E1114 #501B1D #64484C #83677B #ADADAD*/
     background-repeat:no-repeat;
     background-size: cover;
     /*background-position: -20% -20%;*/
     background-attachment: fixed;
-background-position: center;
+    background-position: center;
+}
+
+.one, .two, .three {
+
+    background-color: white;
+
+}
+
+.dashboardcontainer {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  padding-bottom: 0px;
+  padding-left: 20px;
+}
+#tablecontent {
+  width: 80%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 0px;
 }
 
 .aParent div {
@@ -22,10 +43,10 @@ a{
 .form-item {
   padding: 10px 0 10px 200px;
   position: relative;
-  color: lightgrey;
+  color: black;
 }
 .form-item label {
-    color: lightgrey;
+    color: black;
   left: 0;
   position: absolute;
 }
@@ -46,7 +67,7 @@ a{
   display: flex;
   justify-content: space-between;
   background: #2E1114;
-  color: lightgrey;
+  color: black;
   padding-top: 30px;
   padding-right: 30px;
   padding-bottom: 9px;
@@ -58,7 +79,7 @@ a{
 }
 
 #subtitle {
-  color: lightgrey;
+  color: black;
   position: relative;
   left: 40px;
 }
@@ -106,7 +127,7 @@ ul {
 }
 
 li {
-  color: lightgrey;
+  color: black;
 }
 
 /*.app {
@@ -346,4 +367,9 @@ li {
 .overrun{
     color:#ff0000;
     font-weight:bold;
+}
+
+.display {
+  align: center;
+
 }
