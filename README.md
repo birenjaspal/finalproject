@@ -1,7 +1,7 @@
 # Staffing Online (SOL)
 
 
-<a href="https://morning-bayou-82811.herokuapp.com/"><img src="https://morning-bayou-82811.herokuapp.com/public/images/pmwallpapertint.gif"></a>
+<a href="https://morning-bayou-82811.herokuapp.com/"><img src="https://github.com/birenjaspal/finalproject/tree/master/public/images"></a>
 
 *enabling project teams to make the most out of their talent pool*
 
