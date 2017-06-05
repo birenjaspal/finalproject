@@ -37,7 +37,7 @@
       <th> Project </th>
       <th> Charge Code </th>
       <th> Staff Name </th>
-      <th> Hours </th>
+      <th> Hours Remainging</th>
       <th> Date </th>
     </tr>
   </thead>
@@ -48,8 +48,9 @@
               <a style="color: black" href="/sol/workauthorizations/<%=workauthorizations[i]._id%>"><%=workauthorizations[i].title; %></a></td>
               <td><%=workauthorizations[i].chargecode %></td>
                 <td><%=workauthorizations[i].allocationname %></td>
-                  <td><%=workauthorizations[i].allocationhours %></td>
+                  <td><%=workauthorizations[i].allocationhours - workauthorizations[i].hoursburned %></td>
                     <td><%=workauthorizations[i].allocationdate.getFullYear()%> -  <%=workauthorizations[i].allocationdate.getMonth() %></td>
+
             </tr>
             <% } %>
 </tbody>
